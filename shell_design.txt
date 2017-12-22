@@ -1,0 +1,61 @@
+/*
+ Baoyi Cheng bac848 11200933
+ Tong Wang tow087 11201222
+ */
+
+ For the shell part we could divide our shell into seven parts: 
+ 1.Display information part which build in function commandPrompt(char *promptInfo).
+ 2.Get the user input command and arguments part which bulid in function readCommand(char *promptInfo, char **command, char **parameter).
+ 3.Implement cd, exit as builtin command which build in function builtInCommand(char *command, char **parameter).
+ 4.Check the command has pipline or not in function checkPipline(char **parameter, int parameterNumber, struct checkPipeInfo *checkInfo).
+ 5.Initialize a struct which contain the information to check the pipeline in function checkInfoAssign(struct checkPipeInfo *checkInfo).
+ 6.Bulid your own exec() function in execMyself(char* command, char **parameter).
+ 7.shellprogram function to call fork() wait() to run the shell.
+
+
+ In order to implement each function part, we design them as follow:
+
+1.struct for checkPipeline function:
+ 
+struct checkPipeInfo
+{
+	int checkPoint;
+	char *commandAfterPipe;
+	char **parameterAfterPipe;
+};
+
+2. void commandPrompt(char *promptInfo):
+commdPrompt fuction display information. It will display username, hostname and the current path in terminal.
+username use getpwuid(getuid())
+hostname use gethostname()
+path use getcwd()
+The display should like what bash display:
+username@hostname:path$(change $ to # if root)
+
+
+3.int readCommand(char *promptInfo, char **command, char **parameter):
+use fgets() function to get the input command into a buffer.
+The entered command string must be tokenized into an array of strings by removing the space delimiters. 
+Also delimiters consisting of more than one space must be handled correctly.
+
+
+4.int builtInCommand(char *command, char **parameter);
+Implement the builtin command for cd and exit command and the cd command 
+It will check the command if it is exit just call exit(), it it is cd, get the path and use chdir() to change path.
+It should display error message if necessary.
+
+5.void checkPipline(char **parameter, int parameterNumber, struct checkPipeInfo *checkInfo);
+A function check if the command contain a pipline or not.
+Use struct pointer make it eaiser.
+
+6.void checkInfoAssign(struct checkPipeInfo *checkInfo);
+A function to initialize the information of checkInfo.
+
+7.void execMyself(char* command, char **parameter);
+Write my own exec function use use getenv() to get the path and then call execve() inside.
+
+8.shellprogram():
+Use the return value and pointer to check whetehr the command has pipeline or not.
+Use close(), fork() function to run the shell.
+
+
