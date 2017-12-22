@@ -1,7 +1,4 @@
-/*
- Baoyi Cheng bac848 11200933
- Tong Wang tow087 11201222
- */
+
 
  For the shell part we could divide our shell into seven parts: 
  1.Display information part which build in function commandPrompt(char *promptInfo).
