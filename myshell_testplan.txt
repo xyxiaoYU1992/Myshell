@@ -1,0 +1,27 @@
+/*
+ Baoyi Cheng bac848 11200933
+ Tong Wang tow087 11201222
+ */
+
+ In process the implement, I always use printf to print the important pointer value and the string and the printf code already be commented.
+ If you get the expected output, then continue to write the other parts' code.
+
+ When finished the program, run the program and test the command :
+ cd ..
+ cd ~
+ cd test
+ touch 1.txt
+ ls
+ ls -l
+ ./test
+ la
+ exit
+ cat square.c | wc -l
+ cat makefile | wc -l 
+ fal
+ cd eeeeee
+
+ Using those commands, and then compare to the reall shell out put.
+ Also, you can enter some wrong input, then you can get message from the shell which indicats you are worng.
+ If get the unexpect output, that means you need to modify your code.
+ After test, I found my shell run well
