@@ -1,7 +1,3 @@
-/*
- Baoyi Cheng bac848 11200933
- Tong Wang tow087 11201222
- */
 
  In process the implement, I always use printf to print the important pointer value and the string and the printf code already be commented.
  If you get the expected output, then continue to write the other parts' code.
